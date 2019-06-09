@@ -9,7 +9,7 @@ const initRoutes = require('./config/routesConfig');
 const initAgenda = require('./config/agendaConfig');
 
 
-const env = process.env.NODE_ENV || 'production';
+const env = process.env.NODE_ENV || 'development';
 const envOptions = envConfig[env];
 
 const app = express();
@@ -18,7 +18,7 @@ initMiddleware(app, envOptions.rootPath);
 initViews(app, envOptions.rootPath);
 initPassport();
 initRoutes(app);
-initAgenda(envOptions.dbPath);
+// initAgenda(envOptions.dbPath);
 
 initDb(envOptions.dbPath)
     .then(() => {
