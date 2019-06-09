@@ -59,12 +59,9 @@ User.seedAdminUser = async () => {
         if (0 < users.length) {
             return;
         }
-        //
-        // const salt = encryption.generateSalt();
-        // const hashedPass = encryption.generateHashedPassword(salt, 'admin');
 
         return User.create({
-            username: process.env.USERNAME,
+            username: 'admin',
             firstName: process.env.FIRST_NAME,
             lastName: process.env.LAST_NAME,
             password: process.env.PASSWORD,
