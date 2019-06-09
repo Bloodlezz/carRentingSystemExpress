@@ -7,8 +7,7 @@ module.exports = {
         rootPath: path.normalize(path.join(__dirname, '/../'))
     },
     production: {
-        dbPath: 'server_path',
-        // TODO В ТЕРМИНАЛА ПИШЕМ NODE И АКО НАПИШЕМ ПОСЛЕ process.env ЩЕ ВИДИМ ВСИЧКИ ПРОЦЕСИ КОИТО СА В ЕНВ СЕТИНГСА НА УЙНДОУСА !!! И СЪЩО ТАКА МОЖЕМ ДА СЕТНЕМ ЕНВАЕРМЕНТА: $env:NODE_ENV="development"
+        dbPath: process.env.DBPATH,
         port: process.env.PORT || 3000,
         rootPath: path.normalize(path.join(__dirname, '/../'))
     }
