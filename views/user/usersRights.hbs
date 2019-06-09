@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Admin rights</th>
+        <th>User rights</th>
+    </tr>
+    {{#each users}}
+        <tr>
+            <td>{{username}}</td>
+            <td><input type="checkbox" id="{{_id}}" value="1" {{checkIfRoleExists 'Admin' roles}}></td>
+            <td><input type="checkbox" id="{{_id}}" value="2" {{checkIfRoleExists 'User' roles}}></td>
+        </tr>
+    {{/each}}
+</table>

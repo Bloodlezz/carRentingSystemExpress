@@ -1,0 +1,29 @@
+<table>
+    <thead>
+        <tr>
+            <th>Date Rented</th>
+            <th>Model</th>
+            <th>Price Per Day</th>
+            <th>Expires After</th>
+            <th>Extend Rent</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each rents}}
+        <tr>
+            <td>{{formatDate createdAt}}</td>
+            <td><a href="/car/rent/{{car._id}}">{{car.model}}</a></td>
+            <td>{{car.pricePerDay}} &euro;</td>
+            {{#if (isExpired expires)}}
+                <td>{{rentedTimeLeft expires}}</td>
+                <td>
+                    <a href="/car/extend/{{car._id}}">Extend</a>
+                </td>
+            {{else}}
+                <td>Expired</td>
+                <td></td>
+            {{/if}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

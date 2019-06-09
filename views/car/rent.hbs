@@ -1,0 +1,16 @@
+<div id="details">
+    <div class="car-details">
+        <h2>{{model}}</h2>
+        <img src="{{image}}" alt="car">
+        <h2 class="price">Price per day: {{pricePerDay}} &euro;</h2>
+    </div>
+    {{#unless isRented}}
+        <form id="rent-form" action="/car/rent/{{_id}}" method="POST">
+            <label for="days">Rent days:</label>
+            <input type="number" name="days" id="days" step="1" value="1" />
+            <input class="submit-btn" type="submit" value="Rent" />
+        </form>
+    {{else}}
+        <h3>Car has been rented !</h3>
+    {{/unless}}
+</div>
