@@ -9,7 +9,7 @@ const initRoutes = require('./config/routesConfig');
 const initAgenda = require('./config/agendaConfig');
 
 
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'production';
 const envOptions = envConfig[env];
 
 const app = express();
