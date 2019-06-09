@@ -64,10 +64,10 @@ User.seedAdminUser = async () => {
         // const hashedPass = encryption.generateHashedPassword(salt, 'admin');
 
         return User.create({
-            username: 'admin',
-            firstName: 'admin',
-            lastName: 'admin',
-            password: 'admin',
+            username: process.env.USERNAME,
+            firstName: process.env.FIRST_NAME,
+            lastName: process.env.LAST_NAME,
+            password: process.env.PASSWORD,
             roles: ['Admin']
         })
     } catch (err) {
