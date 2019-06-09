@@ -1,5 +1,6 @@
-const express = require('express');
+require('dotenv').config();
 
+const express = require('express');
 const envConfig = require('./config/envConfig');
 const initDb = require('./config/dbConfig');
 const initMiddleware = require('./config/middlewareConfig');
@@ -18,7 +19,7 @@ initMiddleware(app, envOptions.rootPath);
 initViews(app, envOptions.rootPath);
 initPassport();
 initRoutes(app);
-// initAgenda(envOptions.dbPath);
+initAgenda(envOptions.dbPath);
 
 initDb(envOptions.dbPath)
     .then(() => {
