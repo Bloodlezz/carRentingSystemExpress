@@ -1,3 +1,4 @@
+require('dotenv').config();
 
 const express = require('express');
 const envConfig = require('./config/envConfig');
@@ -7,7 +8,6 @@ const initViews = require('./config/viewsConfig');
 const initPassport = require('./config/passport');
 const initRoutes = require('./config/routesConfig');
 const initAgenda = require('./config/agendaConfig');
-require('dotenv').config();
 
 
 const env = process.env.NODE_ENV || 'development';
