@@ -7,7 +7,7 @@ module.exports = {
         rootPath: path.normalize(path.join(__dirname, '/../'))
     },
     production: {
-        dbPath: 'mongodb://heroku_2x7j20dq:s4qg3qr7tojmorfhd67q1qvv67@ds235437.mlab.com:35437/heroku_2x7j20dq',
+        dbPath: process.env.DBPATH,
         port: process.env.PORT || 3000,
         rootPath: path.normalize(path.join(__dirname, '/../'))
     }

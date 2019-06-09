@@ -1,6 +1,6 @@
-// require('dotenv').config();
 
 const express = require('express');
+require('dotenv').config();
 const envConfig = require('./config/envConfig');
 const initDb = require('./config/dbConfig');
 const initMiddleware = require('./config/middlewareConfig');
