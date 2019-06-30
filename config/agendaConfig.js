@@ -36,6 +36,6 @@ module.exports = ((dbPath) => {
 
     (async function () {
         await agenda.start();
-        await agenda.every('one minute', 'detectExpiredRents');
+        await agenda.every('1 hour', 'detectExpiredRents');
     })();
 });
