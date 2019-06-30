@@ -11,7 +11,7 @@ module.exports = ((dbPath) => {
         }
     });
 
-    agenda.define('detectExpiredRents', function (job, done) {
+    agenda.define('detectExpiredRents', {priority: 'high'}, () => {
         Car.find({isRented: true})
             .populate('rent')
             .then((cars) => {
@@ -31,11 +31,11 @@ module.exports = ((dbPath) => {
             })
             .catch(err => {
                 console.log(err);
-            }, done());
+            });
     });
 
     (async function () {
         await agenda.start();
-        await agenda.every('1 hour', 'detectExpiredRents');
+        await agenda.every('one minute', 'detectExpiredRents');
     })();
 });
