@@ -11,7 +11,7 @@ module.exports = ((dbPath) => {
         }
     });
 
-    agenda.define('detectExpiredRents', () => {
+    agenda.define('detectExpiredRents', function (job, done) {
         Car.find({isRented: true})
             .populate('rent')
             .then((cars) => {
@@ -31,7 +31,7 @@ module.exports = ((dbPath) => {
             })
             .catch(err => {
                 console.log(err);
-            });
+            }, done());
     });
 
     (async function () {
